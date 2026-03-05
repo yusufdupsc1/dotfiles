@@ -1,0 +1,5 @@
+# zsh caches / dumps
+.zcompdump*
+.cache/
+.zsh_history
+zle
