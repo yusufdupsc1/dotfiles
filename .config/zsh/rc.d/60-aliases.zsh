@@ -22,3 +22,32 @@ alias lg="lazygit"
 
 # quick directory jump
 alias j="z"
+# ---- productivity functions ----
+
+# fuzzy project opener
+proj() {
+  local dir
+  dir=$(fd . ~/projects -t d 2>/dev/null | fzf --height 40%)
+  [[ -n "$dir" ]] && cd "$dir"
+}
+
+# fuzzy file opener
+edit() {
+  local file
+  file=$(fd . -t f | fzf --height 40%)
+  [[ -n "$file" ]] && nvim "$file"
+}
+
+# jump to git repo root
+groot() {
+  local root
+  root=$(git rev-parse --show-toplevel 2>/dev/null)
+  [[ -n "$root" ]] && cd "$root"
+}
+
+# run command in selected directory
+runin() {
+  local dir
+  dir=$(fd . -t d | fzf --height 40%)
+  [[ -n "$dir" ]] && (cd "$dir" && "$@")
+}
