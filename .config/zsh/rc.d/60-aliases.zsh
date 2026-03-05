@@ -1,0 +1,5 @@
+alias ll='ls -lah'
+alias gs='git status'
+alias gl='git log --oneline --graph --decorate -n 20'
+alias v='nvim'
+command -v lazygit >/dev/null 2>&1 && alias lg='lazygit'
