@@ -1,5 +1,10 @@
-# zsh caches / dumps
-.zcompdump*
+# local caches / dumps
 .cache/
+.zcompdump*
 .zsh_history
 zle
+
+# OS/editor noise
+.DS_Store
+*.swp
+*~
